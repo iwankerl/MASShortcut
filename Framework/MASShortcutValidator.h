@@ -9,7 +9,7 @@
 + (instancetype) sharedValidator;
 
 - (BOOL) isShortcutValid: (MASShortcut*) shortcut;
-- (BOOL) isShortcut: (MASShortcut*) shortcut alreadyTakenInMenu: (NSMenu*) menu explanation: (NSString**) explanation;
-- (BOOL) isShortcutAlreadyTakenBySystem: (MASShortcut*) shortcut explanation: (NSString**) explanation;
+- (BOOL) isShortcut: (MASShortcut*) shortcut alreadyTakenInMenu: (NSMenu*) menu explanation: (NSString* __autoreleasing *) explanation;
+- (BOOL) isShortcutAlreadyTakenBySystem: (MASShortcut*) shortcut explanation: (NSString* __autoreleasing *) explanation;
 
 @end

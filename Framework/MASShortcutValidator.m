@@ -49,7 +49,7 @@
     return NO;
 }
 
-- (BOOL) isShortcut: (MASShortcut*) shortcut alreadyTakenInMenu: (NSMenu*) menu explanation: (NSString**) explanation
+- (BOOL) isShortcut: (MASShortcut*) shortcut alreadyTakenInMenu: (NSMenu*) menu explanation: (NSString* __autoreleasing *) explanation
 {
     NSString *keyEquivalent = [shortcut keyCodeStringForKeyEquivalent];
     NSUInteger flags = [shortcut modifierFlags];
@@ -78,7 +78,7 @@
     return NO;
 }
 
-- (BOOL) isShortcutAlreadyTakenBySystem: (MASShortcut*) shortcut explanation: (NSString**) explanation
+- (BOOL) isShortcutAlreadyTakenBySystem: (MASShortcut*) shortcut explanation: (NSString* __autoreleasing *) explanation
 {
     CFArrayRef globalHotKeys;
     if (CopySymbolicHotKeys(&globalHotKeys) == noErr) {

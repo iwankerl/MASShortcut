@@ -48,6 +48,9 @@ static NSString *const MASShortcutModifierFlags = @"ModifierFlags";
 - (NSString *)keyCodeStringForKeyEquivalent
 {
     NSString *keyCodeString = self.keyCodeString;
+	if (keyCodeString == nil) {
+		return @"";
+	}
     if (keyCodeString.length > 1) {
         switch (self.keyCode) {
             case kVK_F1: return NSStringFromMASKeyCode(0xF704);
@@ -142,7 +145,7 @@ static NSString *const MASShortcutModifierFlags = @"ModifierFlags";
     
     // Everything else should be printable so look it up in the current ASCII capable keyboard layout
     OSStatus error = noErr;
-    NSString *keystroke = nil;
+    NSString *keystroke = @"";
     TISInputSourceRef inputSource = TISCopyCurrentASCIICapableKeyboardLayoutInputSource();
     if (inputSource) {
         CFDataRef layoutDataRef = TISGetInputSourceProperty(inputSource, kTISPropertyUnicodeKeyLayoutData);

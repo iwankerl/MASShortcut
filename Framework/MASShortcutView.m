@@ -386,7 +386,7 @@ void *kUserDataHint = &kUserDataHint;
     else if (data == kUserDataHint) {
         return NSLocalizedStringFromTable(@"Delete shortcut", @"MASShortcut", @"Tooltip for hint button near the non-empty shortcut");
     }
-    return nil;
+    return @"";
 }
 
 #pragma mark - Event monitoring
